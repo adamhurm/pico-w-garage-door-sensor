@@ -67,7 +67,7 @@ $ esphome compile garage-door.yml
 Copy the generated binary into the current directory:
 
 ```
-$ cp .esphome/build/rpi-pico/.pioenvs/rpi-pico/firmware.uf2 ./rpi-pico.uf2
+$ cp .esphome/build/garage-door-pico/.pioenvs/garage-door-pico/firmware.uf2 ./rpi-pico.uf2
 ```
 
 Then on your host computer, with the Pico W booted into BOOTSEL mode (hold down the BOOTSEL button while plugging in the USB cable), copy the `rpi-pico.uf2` file over to the Pico W. When the copy is complete, the Pico should reboot and start working as a garage door sensor.
