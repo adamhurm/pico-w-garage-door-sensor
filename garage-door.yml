@@ -18,7 +18,8 @@ ota:
   password: !secret ota_password
 
 api:
-  password: !secret api_password
+  encryption:
+    key: !secret api_encryption_key
 
 logger:
   level: DEBUG
@@ -45,10 +46,11 @@ binary_sensor:
       inverted: false
     name: South Garage Door
     id: south_garage_door
-    device_class: door
+    device_class: garage_door
     filters:
       - delayed_on: 10ms
     disabled_by_default: false
+    publish_initial_state: true
     on_state:
       then:
         - if:
@@ -74,10 +76,11 @@ binary_sensor:
       inverted: false
     name: North Garage Door
     id: north_garage_door
-    device_class: door
+    device_class: garage_door
     filters:
       - delayed_on: 10ms
     disabled_by_default: false
+    publish_initial_state: true
     on_state:
       then:
         - if:
